@@ -5,14 +5,10 @@ import numpy as np
 S3 = 0.2
 S12 = 1
 WFibre = 0.6 #Fibre weight Fraction
-thickness = 0.001 #m For each layer
-# thickness = 0.0002 #m For each layer (Question 2)
-# thickness = 0.000125 #m For each Layer (Question 5)
+thickness = 0.000125 #m For each Layer (Question 5)
 
 # Laminate Configuration for Question 1
-laminate_config = [0, 90, 90, 0]
-# laminate_config = [-45, +45, 0, 90, 90, 0, 0, 90, 90, 0, +45, -45] # (Question 2)
-# laminate_config = [90, 45,-45, 0] # (Question 5)
+laminate_config = [90, 45,-45, 0] # (Question 5)
 nLayers = len(laminate_config)
 
 print(f'\nThe laminate configuration for this laminate is: {laminate_config}')
@@ -69,12 +65,12 @@ for i in range(nLayers):
 
     v21 = v12 *(E2/E1)  # Minor Poisson Ration
 
-    # # Question 2 - Material Properties
-    # E1 = 54 #GPa
-    # E2 = 18 #GPa
-    # v12 = 0.28
-    # v21 = v12 *(E2/E1)  # Minor Poisson Ration
-    # G12 = 6 #GPa
+    # Question 5 - Material Properties
+    E1 = 54 #GPa
+    E2 = 18 #GPa
+    v12 = 0.28
+    v21 = v12 *(E2/E1)  # Minor Poisson Ration
+    G12 = 6 #GPa
     
     # Qmatrix
     Q11 = E1 / (1 - v12 * v21)
