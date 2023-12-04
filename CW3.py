@@ -182,12 +182,13 @@ print('\n ----------------- \n')
 
 # Define the different directions
 directions = ["Ex", "Ey", "Gxy"]
+directions = ["Ex"]
 print("Engineering Properties:")
 for direction in directions:
     NM = [0] * 6     # Initialize the NM Matrix
     
     if direction == "Ex":
-        NM[0] = 1
+        NM[0] = 25000
     elif direction == "Ey":
         NM[1] = 1
     elif direction == "Gxy":
@@ -212,3 +213,5 @@ for direction in directions:
         Sxy = ((A[2, 0] * ex + A[2, 1] * ey + A[2, 2] * yxy + B[2, 0] * kx + B[2, 1] * ky + B[2, 2] * kxy)) / (nLayers * thickness)
         Gxy = Sxy / yxy
         print(f"Gxy: {Gxy} N/m^2 \n")
+        
+print(result)
